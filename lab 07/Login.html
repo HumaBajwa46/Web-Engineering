@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Form</title>
+ <script>
+     function validate(){
+	if ( document.login.username.value == "" )
+	    {
+			document.getElementById('username_error').innerHTML ="Username is empty!!";			
+			return false;
+	    }
+	if(document.login.password.value == "")	
+	   {
+			document.getElementById('pass').innerHTML = "password is empty!!";
+			document.login.password.focus();
+			return false;
+	   }
+}	
+ </script>
+
+</head>
+<body>
+ <form name="login" enctype="multipart/form-data" onsubmit="return validate()">
+  <h1>Login </h1>
+    <table>
+      <tr>
+        <td><label for="username">Username:</label></td>
+        <td><input type="text" name="username" maxlength="50"><div id= "username_error"></div></td>
+      </tr>
+      <tr>
+        <td><label for="password">Password:</label></td>
+        <td><input type="password" name="password" maxlength="20"><div id= "pass"></div></td>
+      </tr>
+      <tr>
+        <td colspan="2"><input type="submit" value="login"></td>
+        <td>Not yet a member?<a href="file:///C:/Users/humas/OneDrive/Desktop/University/6th%20Semester/WEB%20lab/Labs/lab%207/signup.html" target ="_blank">Register</a></td>
+      </tr>
+    </table>
+  </form>
+</body>
+</html>
