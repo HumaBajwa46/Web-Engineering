@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<head>
+    <title>Sign Up Form</title>
+
+<script language="JavaScript" type="text/javaScript">
+     function validateSignUp(){
+	if ( document.signup.fname.value == "" )
+	    {
+			document.getElementById('fname').innerHTML = "User first name is empty!!";		
+			return false;
+	    }
+	if ( document.signup.lname.value == "" )
+	    {
+			document.getElementById('lname').innerHTML = "User Last name is empty!!";			
+			return false;
+	    }
+	if ( document.signup.organization.value == "" )
+	    {
+			document.getElementById('org').innerHTML ="Organization name is empty!!";			
+			return false;
+	    }
+	if ( document.signup.email.value == "" )		
+        {
+		document.getElementById('email').innerHTML ="Please enter email address!";
+		return false;
+	}	
+	if ( document.signup.wnumber.value == "" )
+	{		
+			document.getElementById('num').innerHTML ="Work Phone is empty!!";
+			return false;
+	}
+	if ( document.signup.hnumber.value == "" )
+	{		
+			document.getElementById('nmbr').innerHTML ="Home Phone is empty!!";
+			return false;
+	}
+	if ( document.signup.cnumber.value == "" )
+	{		
+			document.getElementById('phone').innerHTML ="Cell Phone is empty!!";
+			return false;
+	}
+	if ( document.signup.fax.value == "" )
+	{		
+			document.getElementById('fax').innerHTML ="Fax is empty!!";
+			return false;
+	}
+	if ( document.signup.address1.value == "" )
+	{	
+			document.getElementById('add').innerHTML ="Address is empty!!";
+			return false;
+	}
+	if ( document.signup.address2.value == "" )
+	{	
+			document.getElementById('add2').innerHTML ="Address is empty!!";
+			return false;
+	}
+	if ( document.employer.city.value == "" )
+	{		document.getElementById('city').innerHTML ="City is empty!!";
+			return false;
+	}
+	if ( document.signup.state.value == "" )
+	{	
+			document.getElementById('state').innerHTML ="State/Province is empty!!";
+			return false;
+	}
+	if ( document.signup.zip.value == "" )
+	{	
+			document.getElementById('zip').innerHTML ="Postal code is empty!!";
+			return false;
+	}
+	if ( document.employer.country.value == "" )
+	{		document.getElementById('country').innerHTML ="Country is empty!!";
+			return false;
+	}
+ }
+
+   function letternumber(event){
+		var keychar;
+			
+		keychar = event.key;
+		alert(event.key)	
+		
+		if ((("0123456789").indexOf(keychar) > -1))
+		   return true;
+		else
+		   return false;
+	}
+ </script>    
+</head>
+
+<body>
+    <form name=signup method=post enctype="multipart/form-data" onsubmit="return validateSignUp()">
+    <h1>Sign Up Form </h1>
+    <table>
+      <tr>
+        <td><label for="name">First,Last Name* :</label></td>
+        <td><input type="text" name="fname" maxlength="50" ><div id="fname"></div></td>
+        <td><input type="text" name="lname" maxlength="50" ><div id="lname"></div></td>
+      </tr>
+      <tr>
+        <td><label for="organization">Organization:</label></td>
+        <td><input type="text" name="organization" maxlength="50" ><div id="org"></div> </td>
+      </tr>
+      <tr>
+        <td><label for="email">Email Address* :</label></td>
+        <td><input type="email" name="email" maxlength="50"><div id="email"></div></td>
+      </tr>
+      <tr>
+        <td><label for="phone">Work Phone:</label></td>
+        <td><input type="number" name="wnumber" onKeyPress="return letternumber(event)" ><div id="num"></div></td>
+      </tr>
+      <tr>
+        <td><label for="phone">Home Phone:</label></td>
+        <td><input type="number" name="hnumber" onKeyPress="return letternumber(event)"><div id="nmbr"></div></td>
+      </tr>
+      <tr>
+        <td><label for="phone">Cell Phone:</label></td>
+        <td><input type="number" name="cnumber" onKeyPress="return letternumber(event)"><div id="phone"></div></td>
+      </tr>
+      <tr>
+        <td><label for="fax">Fax:</label></td>
+        <td><input type="number" name="fax" onKeyPress="return letternumber(event)"><div id="fax"></div></td>
+      </tr>
+      <tr>
+        <td><label for="address">Address 1* :</label></td>
+        <td><input type="text" name="address1" maxlength="100"><div id="add"></div></td>
+      </tr>
+      <tr>
+        <td><label for="address">Address 2:</label></td>
+        <td><input type="text" name="address2" maxlength="100"><div id="add2"></div></td>
+      </tr>
+      <tr>
+        <td><label for="city">City* :</label></td>
+        <td><input type="text" name="city" maxlength="20"><div id="city"></div></td>
+      </tr>
+      <tr>
+        <td><label for="state">State/Province:</label></td>
+        <td><input type="text" name="state" maxlength="20"><div id="state"></div></td>
+      </tr>
+      <tr>
+        <td><label for="zip">Zip/Postal Code:</label></td>
+        <td><input type="number" name="zip" onKeyPress="return letternumber(event)"><div id="zip"></div></td>
+      </tr>
+      <tr>
+        <td><label for="country">Country* :</label></td>
+        <td><input type="text" name="country" maxlength="20"><div id="country"></div></td>
+      </tr>
+      <tr>
+        <td>* - required fields</td>
+        <td colspan="2"><input type="submit" value="Submit"></td>
+      </tr>
+    </table>
+  </form>
+</body>
